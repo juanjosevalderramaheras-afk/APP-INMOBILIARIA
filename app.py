@@ -52,7 +52,7 @@ def cargar_datos_desde_sheets():
     try:
        credenciales=Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=SCOPES)
        cliente_gspread = gspread.authorize(credenciales)         
-       cliente_gspread.open_by_key(SPREADShojaHEET_ID).sheet1   
+       hoja=cliente_gspread.open_by_key(SPREADShojaHEET_ID).sheet1   
        datos = hoja.get_all_records() 
        return pd.DataFrame(datos) 
     except Exception as e:
