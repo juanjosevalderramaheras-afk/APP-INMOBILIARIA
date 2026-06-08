@@ -26,7 +26,7 @@ st.markdown("""
     }
     .lead-card-qualified { border-left: 5px solid #25D366; }
     </style>
-""", unsafe_allowed_html=True)
+""", unsafe_allowe_html=True)
 
 SPREADSHEET_ID = "1XtOMlL3J8AnlDx4RDaD2pQ-Kzch4zwW5S7kHjCLWahI"
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
