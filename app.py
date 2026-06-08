@@ -50,7 +50,7 @@ SCOPES = [
 @st.cache_data(ttl=10)
 def cargar_datos_desde_sheets():
     try:
-        credenciales = Credentials.from_service_account_file("credenciales.json", scopes=SCOPES)
+        Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=SCOPES)
         cliente_gspread = gspread.authorize(credenciales)
         hoja = cliente_gspread.open_by_key(SPREADSHEET_ID).sheet1
         datos = hoja.get_all_records()
