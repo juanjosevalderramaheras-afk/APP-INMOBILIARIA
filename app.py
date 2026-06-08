@@ -56,7 +56,7 @@ def cargar_datos_desde_sheets():
         datos = hoja.get_all_records()
         return pd.DataFrame(datos)
     except Exception as e:
-        st.error("Configurando la base de datos...")
+        st.error(f"Error de conexión: {e}")
         return pd.DataFrame()
 
 # INTERFAZ DE LA APLICACIÓN
